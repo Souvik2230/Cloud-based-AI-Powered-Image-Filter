@@ -20,4 +20,18 @@ In this experiment, we used the ResNet50 model to perform image classification. 
 
 Training
 
-The model was then trained using the train.py script. The model was trained for 20 epochs and completed with an accuracy of about 81% (which needs improvement :/ )
+The model was then trained using the train.py script. The model was trained for 20 epochs and completed with an accuracy of about 81% (which needs improvement :/ ) https://github.com/Souvik2230/Cloud-based-AI-Powered-Image-Filter/blob/65a83fa787aaf3d54aacff183dfc00d67bcd061f/train.png
+
+Debugging
+
+Model debugging in sagemaker is done using the smdebug library which is a part of the sagemaker python sdk. The library provides a set of hooks that can be used to capture the values of tensors at different points in the training process. The library also provides a set of rules that can be used to detect
+
+Profiling
+
+Using Sagemaker Profiler, we monitored Instance metrics, GPU/CPU utilization and GPU/CPU memory utilization.
+To use Sagemaker Profiler we created profiler rules and configurations. The output is a HTML report.
+
+Results
+
+The profiler report revealed that the model trained for about 40 minutes.
+It also revealed that the model was underutilising the GPU.
